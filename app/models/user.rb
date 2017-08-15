@@ -16,7 +16,11 @@ class User < ActiveRecord::Base
   end
 
   def username
-    self.profile.email
+    if self.profile
+      self.profile.email
+    else
+      nil
+    end
   end
 
   def User.find_by_username(username)
