@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  column_name: MyString
+  previous_value: MyString
+  current_value: MyString
+
+two:
+  column_name: MyString
+  previous_value: MyString
+  current_value: MyString

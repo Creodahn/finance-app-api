@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  country_code: MyString
+  area_code: MyString
+  prefix: MyString
+  subscriber_number: MyString
+  extension: MyString
+
+two:
+  country_code: MyString
+  area_code: MyString
+  prefix: MyString
+  subscriber_number: MyString
+  extension: MyString
