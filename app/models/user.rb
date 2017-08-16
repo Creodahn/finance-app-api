@@ -44,12 +44,12 @@ class User < ActiveRecord::Base
   def generate_auth_token
     token = User.new_token
 
-    self.update_columns(auth_token: token)
+    self.update_columns(authenticated_at: DateTime.now, auth_token: token)
 
     token
   end
 
   def invalidate_auth_token
-    self.update_columns(auth_token: nil)
+    self.update_columns(authenticated_at: nil, auth_token: nil)
   end
 end

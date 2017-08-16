@@ -13,9 +13,11 @@ class Profile < ActiveRecord::Base
 
   has_many :addresses
   has_many :images, as: :imageable
-  has_many :groups, through: :memberships
   has_many :memberships
   has_many :phone_numbers
+
+  # through relationships
+  has_many :groups, through: :memberships
 
   def email_case
     email.downcase!
