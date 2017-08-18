@@ -54,3 +54,36 @@ Image.create(
   imageable_id: p.id,
   uploader_id: p.id
 )
+
+AccountType.create(
+  is_debt: false,
+  name: 'Checking',
+  require_routing_number: true
+)
+
+AccountType.create(
+  is_debt: false,
+  name: 'Savings',
+  require_routing_number: true
+)
+
+AccountType.create(
+  description: 'Auto, mortgage, student, other monthly loans',
+  is_debt: true,
+  name: 'Installment Loan',
+  require_routing_number: false
+)
+
+AccountType.create(
+  description: 'Any credit card with a monthly payment',
+  is_debt: true,
+  name: 'Revolving Credit',
+  require_routing_number: false
+)
+
+AccountType.create(
+  description: 'Any credit card requiring full payoff each month',
+  is_debt: true,
+  name: 'Open Credit',
+  require_routing_number: false
+)
