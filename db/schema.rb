@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170805205213) do
+ActiveRecord::Schema.define(version: 20170817171138) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20170805205213) do
     t.string "name"
     t.string "description"
     t.boolean "is_debt", default: false, null: false
+    t.boolean "require_routing_number", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -27,13 +28,16 @@ ActiveRecord::Schema.define(version: 20170805205213) do
     t.string "account_number"
     t.decimal "balance"
     t.string "description"
+    t.decimal "interest_rate"
     t.string "name"
     t.string "routing_number"
     t.bigint "account_type_id"
+    t.bigint "interest_rate_type_id"
     t.bigint "profile_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["account_type_id"], name: "index_accounts_on_account_type_id"
+    t.index ["interest_rate_type_id"], name: "index_accounts_on_interest_rate_type_id"
     t.index ["profile_id"], name: "index_accounts_on_profile_id"
   end
 
@@ -92,6 +96,13 @@ ActiveRecord::Schema.define(version: 20170805205213) do
     t.datetime "updated_at", null: false
     t.index ["imageable_type", "imageable_id"], name: "index_images_on_imageable_type_and_imageable_id"
     t.index ["uploader_id"], name: "index_images_on_uploader_id"
+  end
+
+  create_table "interest_rate_types", force: :cascade do |t|
+    t.string "description"
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "memberships", force: :cascade do |t|
