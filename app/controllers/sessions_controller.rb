@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
   def destroy
     u = current_user
     puts u
-    u.invalidate_auth_token
+    u.try(:invalidate_auth_token)
     head :ok
   end
 

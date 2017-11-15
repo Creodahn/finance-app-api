@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  validates :password, presence: true, length: { minimum: 8 }
+  validates :password_digest, presence: true, length: { minimum: 8 }
 
   has_one :profile
 

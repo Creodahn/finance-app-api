@@ -11,6 +11,10 @@ class Api::UserResource < Api::BaseResource
     super - [:username]
   end
 
+  def fetchable_fields
+    super - [:password]
+  end
+
   filter :username, apply: -> (records, value, options) {
     records.where(id: records.map{ |r| r.id if r.username == value.first })
   }
