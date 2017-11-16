@@ -7,6 +7,7 @@ class Profile < ActiveRecord::Base
   validates_format_of :name, :with => /\A[^0-9`!@#\$%\^&*+_=]{4,}\z/
   validates :user, presence: true, uniqueness: true
 
+  after_create :authenticate_initial_login
   before_save :email_case
 
   belongs_to :user
@@ -21,5 +22,11 @@ class Profile < ActiveRecord::Base
 
   def email_case
     email.downcase!
+  end
+
+  private
+
+  def authenticate_initial_login
+    self.user.generate_auth_token
   end
 end

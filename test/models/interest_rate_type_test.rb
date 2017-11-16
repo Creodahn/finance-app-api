@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class InterestRateTypeTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  def setup
+    @rateType = InterestRateType.new(name: "test")
+  end
 end

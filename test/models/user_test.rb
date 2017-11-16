@@ -6,7 +6,6 @@ class UserTest < ActiveSupport::TestCase
     @user.save
     @profile = Profile.new(
                  name: "Justin Drew",
-                 phone_number: "8452357943",
                  email: "justin@justindrew.net",
                  user_id: @user.reload.id
                )
@@ -23,7 +22,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "password is present" do
-    assert_not @user.password.empty?
+    assert_not @user.password_digest.empty?
   end
 
   test "profile exists" do
