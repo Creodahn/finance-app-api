@@ -6,5 +6,6 @@ class Account < ApplicationRecord
   validates :profile, presence: true
 
   belongs_to :account_type
+  belongs_to :group
   belongs_to :profile
 end

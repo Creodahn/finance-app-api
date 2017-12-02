@@ -32,11 +32,13 @@ ActiveRecord::Schema.define(version: 20170817171138) do
     t.string "name"
     t.string "routing_number"
     t.bigint "account_type_id"
+    t.bigint "group_id"
     t.bigint "interest_rate_type_id"
     t.bigint "profile_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["account_type_id"], name: "index_accounts_on_account_type_id"
+    t.index ["group_id"], name: "index_accounts_on_group_id"
     t.index ["interest_rate_type_id"], name: "index_accounts_on_interest_rate_type_id"
     t.index ["profile_id"], name: "index_accounts_on_profile_id"
   end

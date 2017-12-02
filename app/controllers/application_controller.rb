@@ -6,6 +6,7 @@ class ApplicationController < JSONAPI::ResourceController
   # skip_before_action :ensure_valid_accept_media_type, if: "Rails.env.development?"
 
   def context
+    puts current_user
     { current_user: current_user, token: token }
   end
 
@@ -30,6 +31,7 @@ class ApplicationController < JSONAPI::ResourceController
   end
 
   def validate_current_user
-    render_unauthorized unless current_user.present?
+    u = authenticate_token
+    render_unauthorized unless u.nil?
   end
 end

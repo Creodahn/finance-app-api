@@ -7,10 +7,24 @@ u = User.create(
   updated_at: DateTime.now
 )
 
+u2 = User.create(
+  password: 'test',
+  created_at: DateTime.now,
+  updated_at: DateTime.now
+)
+
 p = Profile.create(
   name: 'Justin Drew',
   email: 'justin@justindrew.net',
   user_id: u.id,
+  created_at: DateTime.now,
+  updated_at: DateTime.now
+)
+
+p2 = Profile.create(
+  name: 'Test User',
+  email: 'test@test.com',
+  user_id: u2.id,
   created_at: DateTime.now,
   updated_at: DateTime.now
 )
@@ -56,19 +70,21 @@ Image.create(
 )
 
 AccountType.create(
+  description: 'A debit account',
   is_debt: false,
   name: 'Checking',
   require_routing_number: true
 )
 
 AccountType.create(
+  description: 'A bank account that earns interest',
   is_debt: false,
   name: 'Savings',
   require_routing_number: true
 )
 
 AccountType.create(
-  description: 'Auto, mortgage, student, other monthly loans',
+  description: 'Auto, mortgage, student, or other monthly loans',
   is_debt: true,
   name: 'Installment Loan',
   require_routing_number: false
@@ -86,4 +102,35 @@ AccountType.create(
   is_debt: true,
   name: 'Open Credit',
   require_routing_number: false
+)
+
+at = AccountType.create(
+  description: 'An account with a utility or service provider',
+  is_debt: true,
+  name: 'Service Account',
+  require_routing_number: false
+)
+
+g = Group.create(
+  name: 'Test Group'
+)
+
+Membership.create(
+  group_id: g.id,
+  profile_id: p.id
+)
+
+Membership.create(
+  group_id: g.id,
+  profile_id: p2.id
+)
+
+Account.create(
+  account_number: '100',
+  account_type_id: at.id,
+  balance: 0,
+  description: 'Monthly payment to Netflix',
+  group_id: g.id,
+  name: 'Netflix',
+  profile_id: p.id
 )

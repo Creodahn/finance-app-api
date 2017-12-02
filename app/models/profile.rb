@@ -12,6 +12,7 @@ class Profile < ActiveRecord::Base
 
   belongs_to :user
 
+  has_many :accounts
   has_many :addresses
   has_many :images, as: :imageable
   has_many :memberships

@@ -3,6 +3,7 @@ class Api::ProfileResource < Api::BaseResource
 
   has_one :user
 
+  has_many :accounts
   has_many :addresses
   has_many :images
   has_many :memberships
