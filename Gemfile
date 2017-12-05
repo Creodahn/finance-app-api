@@ -9,6 +9,8 @@ gem 'activerecord'
 
 gem 'jsonapi-resources'
 
+gem 'rollbar'
+
 gem 'valid_url'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
