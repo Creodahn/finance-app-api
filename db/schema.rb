@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171202024912) do
+ActiveRecord::Schema.define(version: 20171212042501) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20171202024912) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "account_number"
-    t.decimal "balance"
+    t.string "balance"
     t.string "description"
     t.decimal "interest_rate"
     t.string "name"
@@ -110,10 +110,12 @@ ActiveRecord::Schema.define(version: 20171202024912) do
   create_table "memberships", force: :cascade do |t|
     t.bigint "group_id"
     t.bigint "profile_id"
+    t.bigint "role_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["group_id"], name: "index_memberships_on_group_id"
     t.index ["profile_id"], name: "index_memberships_on_profile_id"
+    t.index ["role_id"], name: "index_memberships_on_role_id"
   end
 
   create_table "phone_numbers", force: :cascade do |t|
@@ -139,6 +141,28 @@ ActiveRecord::Schema.define(version: 20171202024912) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_profiles_on_email"
     t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
+  create_table "rights", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "scope", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "roles_rights", force: :cascade do |t|
+    t.bigint "role_id"
+    t.bigint "right_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["right_id"], name: "index_roles_rights_on_right_id"
+    t.index ["role_id"], name: "index_roles_rights_on_role_id"
   end
 
   create_table "transaction_types", force: :cascade do |t|

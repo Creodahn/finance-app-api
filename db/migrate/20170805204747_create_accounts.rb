@@ -2,6 +2,7 @@ class CreateAccounts < ActiveRecord::Migration[5.1]
   def change
     create_table :accounts do |t|
       t.string :account_number
+      t.string :balance
       t.string :description
       t.decimal :interest_rate
       t.string :name
