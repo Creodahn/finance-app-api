@@ -1,4 +1,4 @@
-class Image < ActiveRecord::Base
+class Image < ApplicationRecord
   validates :file_name, presence: true
   validates :url, presence: true, :url => true
   validates :uploader_id, presence: true

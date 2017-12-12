@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+class User < ApplicationRecord
   validates :password_digest, presence: true, length: { minimum: 8 }
 
   has_one :profile

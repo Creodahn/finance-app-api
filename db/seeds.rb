@@ -2,12 +2,16 @@
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 TransactionType.create(
   is_debit: true,
-  name: 'Debit'
+  name: 'Debit',
+  created_at: DateTime.now,
+  updated_at: DateTime.now
 )
 
 TransactionType.create(
   is_debit: false,
-  name: 'Credit'
+  name: 'Credit',
+  created_at: DateTime.now,
+  updated_at: DateTime.now
 )
 
 u = User.create(

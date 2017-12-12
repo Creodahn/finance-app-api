@@ -11,6 +11,10 @@ Rails.application.routes.draw do
     jsonapi_resources :memberships
     jsonapi_resources :phone_numbers
     jsonapi_resources :profiles
+    jsonapi_resources :rights
+    jsonapi_resources :roles
+    jsonapi_resources :transactions
+    jsonapi_resources :transaction_types
     jsonapi_resources :users
   end
 

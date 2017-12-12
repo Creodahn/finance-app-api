@@ -1,4 +1,4 @@
-class Profile < ActiveRecord::Base
+class Profile < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 },
             format: { with: VALID_EMAIL_REGEX },
@@ -20,6 +20,7 @@ class Profile < ActiveRecord::Base
 
   # through relationships
   has_many :groups, through: :memberships
+  has_many :roles, through: :memberships
 
   def email_case
     email.downcase!

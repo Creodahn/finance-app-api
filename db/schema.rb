@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20171212042501) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "account_number"
-    t.string "balance"
+    t.decimal "balance", default: "0.0"
     t.string "description"
     t.decimal "interest_rate"
     t.string "name"
