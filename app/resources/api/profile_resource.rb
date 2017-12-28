@@ -1,5 +1,5 @@
 class Api::ProfileResource < Api::BaseResource
-  attributes :name, :email
+  attributes :bio, :name, :email
 
   has_one :user
 

@@ -8,7 +8,7 @@ end
 gem 'activerecord'
 
 gem 'jsonapi-resources'
-
+gem 'redis'
 gem 'rollbar'
 
 gem 'valid_url'

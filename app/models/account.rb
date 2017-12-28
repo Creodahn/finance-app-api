@@ -8,4 +8,6 @@ class Account < ApplicationRecord
   belongs_to :account_type
   belongs_to :group, optional: true
   belongs_to :profile
+
+  has_many :transactions
 end

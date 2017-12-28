@@ -134,6 +134,7 @@ ActiveRecord::Schema.define(version: 20171212042501) do
   end
 
   create_table "profiles", force: :cascade do |t|
+    t.string "bio"
     t.string "name"
     t.string "email"
     t.bigint "user_id"

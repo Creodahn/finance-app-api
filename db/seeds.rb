@@ -54,6 +54,12 @@ citA = ContactInfoType.create(
   phone_only: false
 )
 
+ContactInfoType.create(
+  name: 'Work',
+  description: '',
+  phone_only: false
+)
+
 Address.create(
   address: '4 E Road-place Boulevard',
   city: 'Anytown',
