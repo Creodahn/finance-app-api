@@ -1,11 +1,16 @@
 class Transaction < ApplicationRecord
   validates :amount, presence: true
+  validates :transaction_date, presence: true
 
   after_save :update_account_balance
 
   belongs_to :account
   belongs_to :profile
   belongs_to :transaction_type
+
+  def is_debit
+    self.transaction_type.is_debit
+  end
 
   private
 

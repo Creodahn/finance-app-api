@@ -6,6 +6,19 @@ class PhoneNumber < ApplicationRecord
   validates :contact_info_type, presence: true
   validates :profile, presence: true
 
+  before_save :check_primary_flag
+
   belongs_to :contact_info_type
   belongs_to :profile
+
+  def check_primary_flag
+    if self.is_primary
+      self.profile.phone_numbers.each do |pn|
+        pn.is_primary = false
+        pn.save
+      end
+
+      self.is_primary = true
+    end
+  end
 end

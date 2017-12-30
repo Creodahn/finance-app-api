@@ -175,6 +175,7 @@ ActiveRecord::Schema.define(version: 20171212042501) do
 
   create_table "transactions", force: :cascade do |t|
     t.decimal "amount", null: false
+    t.date "transaction_date", null: false
     t.bigint "account_id"
     t.bigint "profile_id"
     t.bigint "transaction_type_id"
