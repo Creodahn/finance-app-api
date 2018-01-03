@@ -16,6 +16,7 @@ class Profile < ApplicationRecord
   has_many :addresses
   has_many :images, as: :imageable
   has_many :memberships
+  has_many :payments
   has_many :phone_numbers
 
   # through relationships

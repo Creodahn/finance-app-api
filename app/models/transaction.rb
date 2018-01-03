@@ -8,6 +8,8 @@ class Transaction < ApplicationRecord
   belongs_to :profile
   belongs_to :transaction_type
 
+  has_many :payments
+
   def is_debit
     self.transaction_type.is_debit
   end

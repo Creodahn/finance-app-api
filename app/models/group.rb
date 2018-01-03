@@ -9,4 +9,13 @@ class Group < ApplicationRecord
   def membership_count
     self.memberships.count
   end
+
+  def balance
+    balance = 0
+    self.accounts.each do |acct|
+      balance += acct.balance
+    end
+
+    return balance
+  end
 end
