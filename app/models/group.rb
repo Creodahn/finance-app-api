@@ -6,10 +6,6 @@ class Group < ApplicationRecord
   has_many :memberships
   has_many :profiles, through: :memberships
 
-  def membership_count
-    self.memberships.count
-  end
-
   def balance
     balance = 0
     self.accounts.each do |acct|

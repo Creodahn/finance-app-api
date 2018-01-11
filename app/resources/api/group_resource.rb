@@ -1,5 +1,5 @@
 class Api::GroupResource < Api::BaseResource
-  attributes :name, :description, :membership_count, :balance
+  attributes :name, :description, :balance
 
   has_many :accounts
   has_many :memberships
@@ -11,6 +11,6 @@ class Api::GroupResource < Api::BaseResource
   filter :profile
 
   def updatable_fields
-    super - [:membership_count, :balance]
+    super - [:balance]
   end
 end

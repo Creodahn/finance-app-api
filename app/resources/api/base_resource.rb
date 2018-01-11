@@ -42,16 +42,4 @@ class Api::BaseResource < JSONAPI::Resource
       raise JSONAPI::Exceptions::RecordLocked.new("#{@model.errors.full_messages.join('. ')}")
     end
   end
-
-  def skip_callbacks
-    if @model.is_a? StepCompany
-      StepCompany.skip_callback(:destroy, :before, :send_removed_notification)
-    end
-  end
-
-  def set_callbacks
-    if @model.is_a? StepCompany
-      StepCompany.set_callback(:destroy, :before, :send_removed_notification)
-    end
-  end
 end

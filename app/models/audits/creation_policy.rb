@@ -16,7 +16,7 @@ module Audits
         @msg = "Successfully Audited #{@auditable.class.to_s}"
       rescue Exception => e
         @success = false
-        @msg =  "Audit Trail failed to save due to error: #{e.inspect}"
+        @msg =  "Audit failed to save due to error: #{e.inspect}"
       end
       return {success: @success, message: @msg}
     end
