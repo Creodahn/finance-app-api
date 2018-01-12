@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180103025635) do
+ActiveRecord::Schema.define(version: 20180111031512) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,12 +25,10 @@ ActiveRecord::Schema.define(version: 20180103025635) do
   end
 
   create_table "accounts", force: :cascade do |t|
-    t.string "account_number"
     t.decimal "balance", default: "0.0"
     t.string "description"
     t.decimal "interest_rate"
     t.string "name"
-    t.string "routing_number"
     t.bigint "account_type_id"
     t.bigint "group_id"
     t.bigint "interest_rate_type_id"

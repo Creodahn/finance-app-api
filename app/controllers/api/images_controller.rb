@@ -1,2 +1,2 @@
-class Api::ImagesController < JSONAPI::ResourceController
+class Api::ImagesController < ApplicationController
 end

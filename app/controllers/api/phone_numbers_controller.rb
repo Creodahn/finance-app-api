@@ -1,2 +1,2 @@
-class Api::PhoneNumbersController < JSONAPI::ResourceController
+class Api::PhoneNumbersController < ApplicationController
 end

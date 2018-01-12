@@ -1,2 +1,2 @@
-class Api::TransactionTypesController < JSONAPI::ResourceController
+class Api::TransactionTypesController < ApplicationController
 end

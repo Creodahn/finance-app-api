@@ -1,2 +1,2 @@
-class Api::GroupsController < JSONAPI::ResourceController
+class Api::GroupsController < ApplicationController
 end

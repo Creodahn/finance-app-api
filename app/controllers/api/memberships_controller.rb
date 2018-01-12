@@ -1,2 +1,2 @@
-class Api::MembershipsController < JSONAPI::ResourceController
+class Api::MembershipsController < ApplicationController
 end

@@ -1,2 +1,2 @@
-class Api::InterestRateTypesController < JSONAPI::ResourceController
+class Api::InterestRateTypesController < ApplicationController
 end

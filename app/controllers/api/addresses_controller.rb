@@ -1,2 +1,2 @@
-class Api::AddressesController < JSONAPI::ResourceController
+class Api::AddressesController < ApplicationController
 end

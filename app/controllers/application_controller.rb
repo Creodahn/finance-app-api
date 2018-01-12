@@ -1,12 +1,10 @@
 class ApplicationController < JSONAPI::ResourceController
   # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :null_session
-  before_action :validate_current_user, :only => [:create, :update, :delete]
+  before_action :validate_current_user
   # skip_before_action :ensure_valid_accept_media_type, if: "Rails.env.development?"
 
   def context
-    puts current_user
     { current_user: current_user, token: token }
   end
 
@@ -32,6 +30,6 @@ class ApplicationController < JSONAPI::ResourceController
 
   def validate_current_user
     u = authenticate_token
-    render_unauthorized unless u.nil?
+    render_unauthorized unless u.present?
   end
 end

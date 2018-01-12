@@ -1,2 +1,2 @@
-class Api::ContactInfoTypesController < JSONAPI::ResourceController
+class Api::ContactInfoTypesController < ApplicationController
 end

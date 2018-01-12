@@ -1,2 +1,2 @@
-class Api::AuditsController < JSONAPI::ResourceController
+class Api::AuditsController < ApplicationController
 end

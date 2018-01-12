@@ -1,2 +1,2 @@
-class Api::PaymentsController < JSONAPI::ResourceController
+class Api::PaymentsController < ApplicationController
 end

@@ -1,2 +1,2 @@
-class Api::RightsController < JSONAPI::ResourceController
+class Api::RightsController < ApplicationController
 end
