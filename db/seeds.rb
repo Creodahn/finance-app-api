@@ -82,7 +82,7 @@ PhoneNumber.create(
 
 Image.create(
   file_name: 'me.jpg',
-  url: 'http://justindrew.net/imgs/me.jpg',
+  url: 'https://cdn.filestackcontent.com/Bkz2iuRkS66opHC4RMbT',
   imageable_type: 'Profile',
   imageable_id: p.id,
   uploader_id: p.id

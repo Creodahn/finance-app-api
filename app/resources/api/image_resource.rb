@@ -4,7 +4,7 @@ class Api::ImageResource < Api::BaseResource
   attribute :description
 
   has_one :imageable, polymorphic: true
-  has_one :profile
+  has_one :uploader
 
   filter :file_name
   filter :profile
