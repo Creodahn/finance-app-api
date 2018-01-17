@@ -24,5 +24,5 @@ Rails.application.routes.draw do
   get 'api/accounts', to: 'accounts#show'
   post 'api/users', to: 'users#create'
 
-  get '/(*path)' => "bootstrap#index", as: :root, format: :html
+  get 'api/confirmemail', to: 'confirm_email#show'
 end
