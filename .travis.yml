@@ -4,8 +4,8 @@ ruby:
   - 2.4.2
 
 script:
-  - bin/rake db:create
-  - bin/rake db:migrate
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate
 
 deploy:
   provider: heroku
