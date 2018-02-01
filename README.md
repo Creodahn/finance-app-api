@@ -1,5 +1,7 @@
 # README
 
+Travis CI [![Build Status](https://travis-ci.org/Creodahn/finance-app-api.svg?branch=master)](https://travis-ci.org/Creodahn/finance-app-api)
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
