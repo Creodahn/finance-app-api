@@ -3,6 +3,10 @@ language: ruby
 ruby:
   - 2.4.2
 
+script:
+  - bin/rake db:create
+  - bin/rake db:migrate
+
 deploy:
   provider: heroku
   api_key:
